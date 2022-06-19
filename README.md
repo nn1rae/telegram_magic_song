@@ -14,7 +14,7 @@ $ cd {drag script folder here | перетащите сюда папку со с
 
 # Instalation and run | Установка и Запуск
 ```
-$ pip3 install -r requirements.txt 
+$ python3 -m pip install -r requirements.txt 
 
 $ python3 song_magic.py
 ```
