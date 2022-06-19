@@ -1,6 +1,4 @@
 import asyncio
-from random import choice
-from threading import Thread as th
 from telethon import TelegramClient
 from telethon.events import NewMessage
 from colorama import init, Fore
