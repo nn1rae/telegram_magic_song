@@ -1,8 +1,12 @@
 import asyncio
+from base64 import encode
 from telethon import TelegramClient
 from telethon.events import NewMessage
 from colorama import init, Fore
 import os
+from pathlib import Path
+
+
 init()
 
 APP_ID = 9790192
@@ -12,8 +16,12 @@ EDIT_DELAY = 0.01
 songFiles = os.listdir('songs')
 magic_frases = []
 songs = {}
+
+data_folder = Path("songs")
 for song in songFiles:
-    with open('songs/' + song, 'r') as f:
+    file_to_open = data_folder / song
+    print(file_to_open)
+    with open(file_to_open, 'r', encoding="utf-8") as f:
         songs.update({song[:-4]:list(f.read().split('\n'))})
         magic_frases.append(song[:-4])
 
